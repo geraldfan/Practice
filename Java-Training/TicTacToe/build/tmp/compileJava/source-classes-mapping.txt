@@ -1,6 +1,6 @@
-Ui.java
- Ui
 Logic.java
  Logic
+Ui.java
+ Ui
 TicTacToe.java
  TicTacToe
