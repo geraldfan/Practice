@@ -1,0 +1,43 @@
+.grid-container {
+    background-color: greenyellow;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px;
+    padding: 20px;
+    align-content: space-around;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.grid-item {
+    background-color: grey;
+    border: 2px solid black;
+    padding: 40px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#grid-company {
+    grid-area: 1/span 3;
+}
+
+#grid-content1 {
+    grid-area: 3/1/span 2/span 3;
+}
+
+#grid-content-html {
+    grid-area: 5/1/span 1/span 2;
+}
+
+#grid-content-css {
+    grid-area: 6/2/span 1/span 2;
+}
+
+#grid-footer {
+    grid-area: 8/1/span1/span 3;
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+}

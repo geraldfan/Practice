@@ -1,0 +1,9 @@
+* {
+    background-color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    border: 2px solid black;
+}
+
