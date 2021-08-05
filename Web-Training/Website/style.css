@@ -8,7 +8,7 @@ body, html {
 }
 
 h1 {
-    color: purple;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -83,18 +83,9 @@ img {
     transform: scale(1.5);
 }
 
-h1.header {
-    height: 100px;
-    width: 250px;
-    text-align: center;
-    background-color: wheat;
-    animation-name: headerAni;
-    animation-duration: 5s;
-    position: relative;
-    animation-timing-function: ease;
-    animation-fill-mode: forward;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+div.header {
+    margin: 0px;
+    margin-left: 120px;
 }
 
 input[type=email], input[type=password] {
@@ -119,14 +110,64 @@ input:invalid {
     text-align: center;
 }
 
-
-@keyframes headerAni {
-    from {
-        left: 0%;
-    }
-    to {
-        left: 80%;
-        background-color: aqua;
-        transform: rotate(360deg);
-    }
+.logo {
+    height: 100px;
+    width: 100px;
+    margin-left: 2%;
+    float: left;
+    transition: transform 0.5s ease-in-out;
 }
+
+.logo:hover {
+    transform: rotate(360deg);
+}
+
+.logoContainer {
+    height: auto;
+    padding: 1%;
+    margin-bottom: 10px;
+}
+
+.clear {
+    clear: left;
+}
+
+a.logoLink {
+    color: black;
+    text-decoration: none;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover{
+    opacity: 0.6;
+}
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  /* Email */
+  .fa-envelope-square {
+      background: palevioletred;
+      color: white;
+  }
+
+  .footer {
+      color: white;
+      text-align: center;
+  }
+  

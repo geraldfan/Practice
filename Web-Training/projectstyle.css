@@ -7,3 +7,16 @@
     border: 2px solid black;
 }
 
+.images{
+    float: right;
+    height: 400px;
+    width: 600px;
+}
+
+.text {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
