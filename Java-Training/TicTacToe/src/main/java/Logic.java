@@ -6,6 +6,7 @@ public class Logic {
     private char[] player;
     private int currentPlayer;
     private boolean isOngoing;
+    private boolean isFull;
 
     public Logic() {
         this.board = new char[][]{
@@ -17,11 +18,13 @@ public class Logic {
         };
         this.player = new char[]{'x', 'o'};
         this.isOngoing = true;
+        this.isFull = true;
     }
 
     /**
      * Returns the current state of the board
-     * @return
+     *
+     * @return a char arrau representation of the board
      */
     public char[][] getBoard() {
         return this.board;
@@ -29,21 +32,41 @@ public class Logic {
 
     /**
      * Makes a move on the board
-     * @param move move as an int from 1-9
+     *
+     * @param move   move as an int from 1-9
      * @param player player as a char x/o
      */
-    public void makeMove(int move, char player) {
+    public boolean makeMove(int move, char player) {
         if (move <= 3) {
-            this.board[0][getColumn(move)] = player;
+            if (!checkOccupied(0, getColumn(move))) {
+                this.board[0][getColumn(move)] = player;
+                return true;
+            }
         } else if (move <= 6) {
-            this.board[2][getColumn(move)] = player;
+            if (!checkOccupied(2, getColumn(move))) {
+                this.board[2][getColumn(move)] = player;
+                return true;
+            }
         } else if (move <= 9) {
-            this.board[4][getColumn(move)] = player;
+            if (!checkOccupied(4, getColumn(move))) {
+                this.board[4][getColumn(move)] = player;
+                return true;
+            }
         }
+        return false;
+    }
+
+    private boolean checkOccupied(int row, int column) {
+        if (board[row][column] == player[0] || board[row][column] == player[1]) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
      * Helper function to get the column
+     *
      * @param move move as an int from 1-9
      * @return column of the move
      */
@@ -62,14 +85,18 @@ public class Logic {
 
     /**
      * Sets the currentPlayer
+     *
      * @param player char representing player
      */
-    public void setPlayer(char player) {
+    public boolean setPlayer(char player) {
         if (player == 'x') {
             currentPlayer = 0;
+            return true;
         } else if (player == 'o') {
             currentPlayer = 1;
+            return true;
         }
+        return false;
     }
 
     /**
@@ -85,6 +112,7 @@ public class Logic {
 
     /**
      * Returns the current player
+     *
      * @return current player as a char
      */
     public char getPlayer() {
@@ -93,6 +121,7 @@ public class Logic {
 
     /**
      * Returns whether the game is still ongoing
+     *
      * @return isOngoing
      */
     public boolean isOngoing() {
@@ -113,13 +142,34 @@ public class Logic {
                 isOngoing = false;
             }
         }
-        if (board[0][0] == board[2][2] && board[2][2] == board[4][4]&& (board[0][0] == player[0] || board[0][0]
+        if (board[0][0] == board[2][2] && board[2][2] == board[4][4] && (board[0][0] == player[0] || board[0][0]
             == player[1])) {
             isOngoing = false;
         }
-        if (board[0][4] == board[2][2] && board[2][2] == board[4][0]&& (board[2][2] == player[0] || board[2][2]
+        if (board[0][4] == board[2][2] && board[2][2] == board[4][0] && (board[2][2] == player[0] || board[2][2]
             == player[1])) {
             isOngoing = false;
         }
+        this.isFull = true;
+        for (int i = 0; i < 5; i += 2) {
+            for (int j = 0; j < 5; j += 2) {
+                if (board[i][j] != player[0] && board[i][j] != player[1]) {
+                    isFull = false;
+                    break;
+                }
+            }
+        }
+
+        if (isFull == true) {
+            isOngoing = false;
+        }
+    }
+
+    public boolean isDraw() {
+        if (isFull) {
+            return true;
+        }
+
+        return false;
     }
 }
