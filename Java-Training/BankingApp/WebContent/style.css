@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+* {
+	background-color: whitesmoke;
+}
+
+.intro {
+	text-align: center;
+	color: navy;
+}
+
+.center {
+	text-align: center;
+}
+
+.forms {
+	padding: 5%;
+}
+
+.order {
+	color:blue;
+}

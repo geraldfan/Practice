@@ -132,6 +132,7 @@ public class Logic {
      * Checks for winning condition
      */
     public void checkForWin() {
+        // Checks rows and columns
         for (int i = 0; i < 5; i += 2) {
             if (board[i][0] == board[i][2] && board[i][2] == board[i][4] && (board[i][0] == player[0] || board[i][0]
                 == player[1])) {
@@ -142,6 +143,8 @@ public class Logic {
                 isOngoing = false;
             }
         }
+
+        // Checks diagonals
         if (board[0][0] == board[2][2] && board[2][2] == board[4][4] && (board[0][0] == player[0] || board[0][0]
             == player[1])) {
             isOngoing = false;
@@ -150,6 +153,7 @@ public class Logic {
             == player[1])) {
             isOngoing = false;
         }
+        //Checks if grid is full
         this.isFull = true;
         for (int i = 0; i < 5; i += 2) {
             for (int j = 0; j < 5; j += 2) {
@@ -160,7 +164,7 @@ public class Logic {
             }
         }
 
-        if (isFull == true) {
+        if (isFull) {
             isOngoing = false;
         }
     }

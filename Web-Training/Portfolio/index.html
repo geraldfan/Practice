@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <h1 class="header">Table Spanning Practice</h1>
+
+    <body>
+        <table class="mainTable">
+            <tr>
+                <th class="tableHeader" colspan="100%">
+                    <h2>My Profile</h2>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/profile.jpg" id="profileImage">
+                </td>
+                <td>Hello , this is a practice portfolio website for HTML tables.</td>
+            </tr>
+            <tr>
+                <th class="tableHeader" colspan="100%">
+                    <h2>Homepage</h2>
+                </th>
+            </tr>
+            <tr>
+                <td class="links">
+                    <a href="home.html" target="content_frame">Home</a><br>
+                    <a href="work_experience.html" target="content_frame">Work Experience</a><br>
+                    <a href="qualifications.html" target="content_frame">Qualification</a><br>
+                    <a href="technical_stack.html" target="content_frame">Technical Stack</a><br>
+                    <a href="contact.html" target="content_frame">Contact me</a><br>
+                </td>
+                <td>
+                    <iframe src="home.html" name="content_frame" width="100%;" height="590px;">
+
+                    </iframe>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="100%">Please do not disclose any information</th>
+            </tr>
+        </table>
+    </body>
+</body>
+
+</html>
