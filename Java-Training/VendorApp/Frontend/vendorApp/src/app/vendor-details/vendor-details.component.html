@@ -1,0 +1,26 @@
+<h3> View Vendor Details</h3>
+<div>
+    <div>
+        <label> <b> Vendor Name: </b></label> {{vendor.vendorName}}
+    </div>
+</div>
+<h2> Item List for {{vendor.vendorName}}</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Item Name</th>
+            <th> Vendor ID</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of items" >
+            <td> {{ item.itemName }} </td>
+            <td> {{ item.vendorId }} </td>
+            <td>
+                <button (click) = "deleteItem(item.itemId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "itemDetails(item.itemId)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

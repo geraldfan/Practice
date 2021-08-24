@@ -1,0 +1,18 @@
+<h2> Vendor List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Vendor Name</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let vendor of vendors" >
+            <td> {{ vendor.vendorName }} </td>
+            <td>
+                <button (click) = "deleteVendor(vendor.vendorId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "vendorDetails(vendor.vendorId)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
