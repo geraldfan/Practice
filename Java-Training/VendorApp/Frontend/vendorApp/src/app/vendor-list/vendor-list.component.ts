@@ -34,4 +34,8 @@ export class VendorListComponent implements OnInit {
     })
   }
 
+  updateVendor(id: number){
+    this.router.navigate(['update-vendor', id]);
+  }
+
 }

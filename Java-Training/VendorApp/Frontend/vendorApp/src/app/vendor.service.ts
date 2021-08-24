@@ -26,4 +26,8 @@ export class VendorService {
   deleteVendor(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/delete/${id}`);
   }
+
+  updateVendor(id: number, vendor: Vendor): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/update/${id}`, vendor);
+  }
 }

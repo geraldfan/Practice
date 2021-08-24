@@ -12,6 +12,8 @@ import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { CreateItemComponent } from './create-item/create-item.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import { UpdateVendorComponent } from './update-vendor/update-vendor.component';
+import { UpdateItemComponent } from './update-item/update-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ItemListComponent } from './item-list/item-list.component';
     VendorListComponent,
     CreateItemComponent,
     ItemDetailsComponent,
-    ItemListComponent
+    ItemListComponent,
+    UpdateVendorComponent,
+    UpdateItemComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@
         <tr *ngFor = "let vendor of vendors" >
             <td> {{ vendor.vendorName }} </td>
             <td>
+                <button (click) = "updateVendor(vendor.vendorId)" class = "btn btn-info"> Update</button>
                 <button (click) = "deleteVendor(vendor.vendorId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
                 <button (click) = "vendorDetails(vendor.vendorId)" class = "btn btn-info" style="margin-left: 10px"> View</button>
             </td>

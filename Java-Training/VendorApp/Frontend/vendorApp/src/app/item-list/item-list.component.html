@@ -12,6 +12,7 @@
             <td> {{ item.itemName }} </td>
             <td> {{ item.vendorId }} </td>
             <td>
+                <button (click) = "updateItem(item.itemId)" class = "btn btn-info"> Update</button>
                 <button (click) = "deleteItem(item.itemId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
                 <button (click) = "itemDetails(item.itemId)" class = "btn btn-info" style="margin-left: 10px"> View</button>
             </td>

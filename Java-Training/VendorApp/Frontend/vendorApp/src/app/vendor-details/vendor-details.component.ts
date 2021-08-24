@@ -43,4 +43,8 @@ export class VendorDetailsComponent implements OnInit {
       this.getItems(this.vendorId);
     })
   }
+
+  updateItem(id: number){
+    this.router.navigate(['update-item', id]);
+  }
 }

@@ -33,4 +33,8 @@ export class ItemListComponent implements OnInit {
     })
   }
 
+  updateItem(id: number){
+    this.router.navigate(['update-item', id]);
+  }
+
 }
