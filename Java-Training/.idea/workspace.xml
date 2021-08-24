@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a48967d-6e29-43db-807d-2567373f8902" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/Logic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendorApp/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,5 +45,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
