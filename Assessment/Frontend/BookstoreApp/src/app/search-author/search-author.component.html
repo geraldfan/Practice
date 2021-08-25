@@ -1,0 +1,18 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Search By Author </h3>
+    <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Author</label>
+            <input type="text" class="form-control" id="authors" required [(ngModel)]="book.authors" #authors="ngModel"
+                name="authors">
+        </div>
+        <div *ngIf="authors.invalid && (authors.dirty || authors.touched)" class="alert">
+            <div *ngIf="authors.errors?.required">
+                Author/s is/are required.
+            </div>
+        </div>
+        <button [disabled]="searchForm.invalid" class="btn btn-success" type="submit">Submit</button>
+
+    </form>
+</div>

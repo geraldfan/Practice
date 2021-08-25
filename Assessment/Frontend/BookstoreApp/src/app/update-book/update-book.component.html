@@ -1,0 +1,61 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Book </h3>
+    <form #bookForm="ngForm" (ngSubmit)="onSubmit()">
+        <!-- ISBN input and validators -->
+        <div class="form-group">
+            <label> ISBN</label>
+            <input type="text" class="form-control" id="isbn" [(ngModel)]="book.isbn"
+                #isbn="ngModel" name="isbn" disabled>
+        </div>
+        <!-- Title input and validators -->
+        <div class="form-group">
+            <label> Title</label>
+            <input type="text" class="form-control" id="title" required maxlength="100" [(ngModel)]="book.title"
+                #title="ngModel" name="title">
+        </div>
+        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert">
+            <div *ngIf="title.errors?.required">
+                Title is required.
+            </div>
+        </div>
+        <!-- Authors input and validators -->
+        <div class="form-group">
+            <label> Authors (Enter multiple authors by delimiting them with a comma ",")</label>
+            <input type="text" class="form-control" id="authors" required [(ngModel)]="book.authors" #authors="ngModel"
+                name="authors">
+        </div>
+        <div *ngIf="authors.invalid && (authors.dirty || authors.touched)" class="alert">
+            <div *ngIf="authors.errors?.required">
+                Author/s is/are required.
+            </div>
+        </div>
+        <!-- Year input and validators -->
+        <div class="form-group">
+            <label> Year</label>
+            <input type="number" class="form-control" id="year" required maxlength="4" minlength="4"
+                [(ngModel)]="book.year" #year="ngModel" name="year">
+        </div>
+        <div *ngIf="year.invalid && (year.dirty || year.touched)" class="alert">
+            <div *ngIf="year.errors?.required">
+                Year is required.
+            </div>
+            <div *ngIf="year.errors?.minlength || year.errors?.maxlength">
+                Year must have 4 characters.
+            </div>
+        </div>
+        <!-- Price input and validators -->
+        <div class="form-group">
+            <label> Price</label>
+            <input type="number" class="form-control" id="price" required maxlength="4" [(ngModel)]="book.price"
+                #price="ngModel" name="price">
+        </div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+            <div *ngIf="price.errors?.required">
+                Price is required.
+            </div>
+        </div>
+
+        <button [disabled]="bookForm.invalid" class="btn btn-success" type="submit">Submit</button>
+
+    </form>
+</div>

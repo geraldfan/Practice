@@ -1,0 +1,23 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="books" routerLinkActive="active" class="nav-link">View All Books</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="create-book" routerLinkActive="active" class="nav-link">Add Book</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="search-title" routerLinkActive="active" class="nav-link">Search By Title</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="search-author" routerLinkActive="active" class="nav-link">Search By Author</a>
+    </li>
+  </ul>
+</nav>
+
+<!--Router Outlet-->
+<h1 class="text-center"> {{title}} </h1>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

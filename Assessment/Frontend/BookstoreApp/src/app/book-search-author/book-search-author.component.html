@@ -1,0 +1,36 @@
+<div *ngIf="hasBooks">
+<h3> View Books</h3>
+<div>
+    <div>
+        <label> <b> Book Author: </b></label> {{author}}
+    </div>
+</div>
+<h2> Book List for {{author}}</h2>
+<table  class="table table-striped">
+    <thead>
+        <tr >
+            <th>ISBN</th>
+            <th> Book Title</th>
+            <th> Authors</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.isbn}}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.authors }}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.price | currency}}</td>
+            <td>
+                <button (click)="updateBook(book.isbn)" class="btn btn-info"> Update</button>
+                <button (click)="deleteBook(book.isbn)" class="btn btn-danger" style="margin-left: 10px">
+                    Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<h1 class="errorMessage" *ngIf="!hasBooks">Author {{author}} does not exist in the database</h1>
